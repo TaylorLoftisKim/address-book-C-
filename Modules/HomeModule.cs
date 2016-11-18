@@ -23,7 +23,26 @@ namespace ContactList
       Get["/view-all-contacts"] = _ =>
       {
         var allContacts = Contacts.GetAll();
-        return View["view-all-contact.cshtml"]
+        return View["view-all-contact.cshtml", allContacts]
+      };
+      Post["/view-all-address"] = _ =>
+      {
+        Address newAddress = new Address(Request.Form["name"]);
+        var allAddressMulti = Address.GetAllAddress();
+        return View["view-all-address", allAddressMulti];
+      };
+      Post["/view-all-contact"] = _ =>
+      {
+        Contact newContact = new Contact(Request.Form["contact"]);
+        var allContacts = Contacts.GetAll();
+        return View["view-all-contact.cshtml", allContacts]
+      };
+      Post["/addressMulti"] = _ =>
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        var selectedContact = Contact.Find(Request.Form["artist-id"]);
+        List<Address> contactAddressMulti = selectedContact.GetAddressMulti();
+        Address newAddress = new Address(Request.Form["address-name"])
       }
     }
   }

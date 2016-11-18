@@ -1,0 +1,7 @@
+<h1>Add a new Address for your Contact</h1>
+  <form action="/addressMulti" method="post">
+    <input id="contact-id" type="hidden" name="contact-id" value='@Model["artist"].GetId()'>
+    <label for="address-name">Enter an Address</label>
+    <input type="text" name="address-name" type="address-name">
+    <button type="submit" name="button">Add Address</button>
+  </form>

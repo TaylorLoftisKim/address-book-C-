@@ -1,0 +1,14 @@
+<h1>Here are your Contacts</h1>
+<form action="/searchContact" method="post">
+  <label for="searchName">Enter a Contact</label>
+  <input type="text" name="searchName" id="searchName">
+  <button type="submit">Enter</button>
+</form>
+<ul>
+  @foreach (var contact in Model)
+  {
+    <li><a href="/contact/@contact.GetId()">@contact.GetContactName()</a></li>
+  }
+</ul>
+<a href="/contact/new">Add an Contact</a>
+<a href="/">Return Home</a>
