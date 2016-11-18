@@ -1,12 +1,12 @@
-# _{Address Book}_
+# _Address Book_
 
-#### _{Allows users to input a Name, Phone Number, and Address to be stored for access later.}, {November 18, 2016}_
+#### _Allows users to input a Name, Phone Number, and Address to be stored for access later. November 18, 2016_
 
-#### By _**{Taylor Loftis-Kim}**_
+#### By _**Taylor Loftis-Kim**_
 
 ## Description
 
-_{This application will store any information provided by the user when filling out the text boxes. This application will allow the user to input a Contact Name, Phone Number, and an Address to be accessed later on.}_
+_This application will store any information provided by the user when filling out the text boxes. This application will allow the user to input a Contact Name, Phone Number, and an Address to be accessed later on._
 
 ## Setup/Installation Requirements
 
@@ -15,7 +15,7 @@ _{This application will store any information provided by the user when filling 
 
 ## Known Bugs
 
-_{Currently will not load phone number page. }_
+_Currently will not load phone number page. _
 
 ## Specifications
 _1. Application will allow users to input a Name to be stored under "Contact Name"._
@@ -32,14 +32,14 @@ _3. Application will allow users to input a 10-digit number sequence to be store
 
 ## Support and contact details
 
-_{If in need of any assistance, please reach me at taylorloftiskim@gmail.com}_
+_If in need of any assistance, please reach me at taylorloftiskim@gmail.com_
 
 ## Technologies Used
 
-_{HTML & C#}_
+_HTML & C#_
 
 ### License
 
-*{MIT - Epicodus}*
+*MIT - Epicodus*
 
 Copyright (c) 2016 **_{Taylor Loftis-Kim}_**
