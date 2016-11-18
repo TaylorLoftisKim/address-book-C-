@@ -9,8 +9,8 @@ namespace ContactList
     public HomeModule()
     {
       Get["/"] = _ => View["index.cshtml"];
-      Get["/address/new"] = _ => View["address-new-form.cshtml"];
       Get["/contact/new"] = _ => View["contact-new-form.cshtml"];
+      Get["/address/new"] = _ => View["address-new-form.cshtml"];
       Get["/contacts/{id}"] = parameters =>
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
@@ -25,17 +25,17 @@ namespace ContactList
         var allContacts = Contact.GetAll();
         return View["view-all-contact.cshtml", allContacts];
       };
+      Post["/view-all-contact"] = _ =>
+      {
+        Contact newContact = new Contact(Request.Form["contact-name"]);
+        var allContacts = Contact.GetAll();
+        return View["view-all-contact.cshtml", allContacts];
+      };
       Post["/view-all-address"] = _ =>
       {
         Address newAddress = new Address(Request.Form["name"]);
         var allAddressMulti = Address.GetAllAddress();
         return View["view-all-address", allAddressMulti];
-      };
-      Post["/view-all-contact"] = _ =>
-      {
-        Contact newContact = new Contact(Request.Form["contact"]);
-        var allContacts = Contact.GetAll();
-        return View["view-all-contact.cshtml", allContacts];
       };
       Get["/contact/{id}/addressMulti/new"] = parameters =>
       {
