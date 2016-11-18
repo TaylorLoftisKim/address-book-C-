@@ -21,11 +21,12 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 ## Known Bugs
 
 _{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+
 ## Specifications
-_{1. Application will allow users to input a Name to be stored under "Contact Name".
-*Example Input: Taylor.
-*Example Output: Taylor.}_
-_{2. Application will allow users to input a Phone Number}_
+_1. Application will allow users to input a Name to be stored under "Contact Name"._
+* _Example Input: Taylor._
+* _Example Output: Taylor._
+_2. Application will allow users to input a Phone Number_
 
 
 
