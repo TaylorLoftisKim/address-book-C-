@@ -23,7 +23,7 @@ namespace ContactList.Objects
     {
       return _instances;
     }
-    public static AddressMulti Find(int searchId)
+    public static Address Find(int searchId)
     {
       return _instances[searchId-1];
     }

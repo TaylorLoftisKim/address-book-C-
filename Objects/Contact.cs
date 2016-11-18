@@ -7,15 +7,15 @@ namespace ContactList.Objects
     private static List<Contact> _instances = new List<Contact> {};
     private string _contactName;
     private int _id;
-    private List<Address> _addressMulti>
+    private List<Address> _addressMulti;
     private static List<Contact> _matches = new List<Contact> {};
 
-    public Artist(string contactName)
+    public Contact(string contactName)
     {
       _contactName = contactName;
       _instances.Add(this);
       _id = _instances.Count;
-      _address = new List<Address>{};
+      _addressMulti = new List<Address>{};
     }
     public string GetContactName()
     {
@@ -33,9 +33,9 @@ namespace ContactList.Objects
     {
       return _instances[searchId-1];
     }
-    public static List<Contact> FilteredArtist(string searchName)
+    public static List<Contact> FilteredContacts(string searchName)
     {
-      foreach(Artist i in _instances)
+      foreach(Contact i in _instances)
       {
         if(i._contactName == searchName)
         {

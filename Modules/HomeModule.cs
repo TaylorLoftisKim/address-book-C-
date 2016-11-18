@@ -10,20 +10,20 @@ namespace ContactList
     {
       Get["/"] = _ => View["index.cshtml"];
       Get["/address/new"] = _ => View["address-new-form.cshtml"];
-      Get["/contact/new"] = _ => Voew["contact-new-form.cshtml"];
+      Get["/contact/new"] = _ => View["contact-new-form.cshtml"];
       Get["/contacts/{id}"] = parameters =>
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedContact = Contact.Find(parameters.id);
-        var contactAddress = selectedContact,GetAddressMulti();
+        var contactAddressMulti = selectedContact.GetAddressMulti();
         model.Add("artist", selectedContact);
         model.Add("address", contactAddressMulti);
         return View["view-all-cd.cshtml", model];
       };
       Get["/view-all-contacts"] = _ =>
       {
-        var allContacts = Contacts.GetAll();
-        return View["view-all-contact.cshtml", allContacts]
+        var allContacts = Contact.GetAll();
+        return View["view-all-contact.cshtml", allContacts];
       };
       Post["/view-all-address"] = _ =>
       {
@@ -34,8 +34,17 @@ namespace ContactList
       Post["/view-all-contact"] = _ =>
       {
         Contact newContact = new Contact(Request.Form["contact"]);
-        var allContacts = Contacts.GetAll();
-        return View["view-all-contact.cshtml", allContacts]
+        var allContacts = Contact.GetAll();
+        return View["view-all-contact.cshtml", allContacts];
+      };
+      Get["/contact/{id}/addressMulti/new"] = parameters =>
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        var selectedContact = Contact.Find(parameters.id);
+        var contactAddressMulti = selectedContact.GetAddressMulti();
+        model.Add("contact", selectedContact);
+        model.Add("AddressMulti", contactAddressMulti);
+        return View["address-new-form.cshtml", model];
       };
       Post["/addressMulti"] = _ =>
       {
@@ -46,8 +55,14 @@ namespace ContactList
         contactAddressMulti.Add(newAddress);
         model.Add("AddressMulti", contactAddressMulti);
         model.Add("contact", selectedContact);
-        return View["view"]
-      }
+        return View["view"];
+      };
+      Post["/searchContact"] = _ =>
+      {
+        var searchInput = Request.Form["searchName"];
+        List<Contact> matchedContacts = Contact.FilteredContacts(searchInput);
+        return View["view-all-contact", matchedContacts];
+      };
     }
   }
 }
