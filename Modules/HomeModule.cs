@@ -17,10 +17,10 @@ namespace ContactList
         var selectedContact = Contact.Find(parameters.id);
         var contactAddressMulti = selectedContact.GetAddressMulti();
         model.Add("artist", selectedContact);
-        model.Add("address", contactAddressMulti);
-        return View["view-all-cd.cshtml", model];
+        model.Add("AddressMulti", contactAddressMulti);
+        return View["view-contact.cshtml", model];
       };
-      Get["/view-all-contacts"] = _ =>
+      Get["/view-all-contact"] = _ =>
       {
         var allContacts = Contact.GetAll();
         return View["view-all-contact.cshtml", allContacts];
