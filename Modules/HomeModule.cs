@@ -16,7 +16,7 @@ namespace ContactList
         Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedContact = Contact.Find(parameters.id);
         var contactAddressMulti = selectedContact.GetAddressMulti();
-        model.Add("artist", selectedContact);
+        model.Add("contact", selectedContact);
         model.Add("AddressMulti", contactAddressMulti);
         return View["view-contact.cshtml", model];
       };
