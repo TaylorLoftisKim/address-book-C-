@@ -1,6 +1,6 @@
 # _{Address Book}_
 
-#### _{Allows users to input a name, phonenumber, and address to be stored for access later.}, {November 18, 2016}_
+#### _{Allows users to input a Name, Phone Number, and Address to be stored for access later.}, {November 18, 2016}_
 
 #### By _**{Taylor Loftis-Kim}**_
 
@@ -12,15 +12,10 @@ _{This application will store any information provided by the user when filling 
 
 * _Clone file from GitHub.com_
 * _Open file in any web browser_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_{Currently will not load phone number page. }_
 
 ## Specifications
 _1. Application will allow users to input a Name to be stored under "Contact Name"._
@@ -35,17 +30,16 @@ _3. Application will allow users to input a 10-digit number sequence to be store
 * _Example Input: 1234567890_
 * _Example Output: 123-456-7890_
 
-
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_{If in need of any assistance, please reach me at taylorloftiskim@gmail.com}_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_{HTML & C#}_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*{MIT - Epicodus}*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2016 **_{Taylor Loftis-Kim}_**
