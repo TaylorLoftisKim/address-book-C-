@@ -26,8 +26,14 @@ _{Are there issues that have not yet been resolved that you want to let users kn
 _1. Application will allow users to input a Name to be stored under "Contact Name"._
 * _Example Input: Taylor._
 * _Example Output: Taylor._
-_2. Application will allow users to input a Phone Number_
 
+_2. Application will allow users to enter a home address to be stored as "address"._
+* _Example Input: 1234 NW Epicodus St._
+* _Example Output: 1234 NW Epicodus St._
+
+_3. Application will allow users to input a 10-digit number sequence to be stored under "Phone Number"_
+* _Example Input: 1234567890_
+* _Example Output: 123-456-7890_
 
 
 ## Support and contact details
