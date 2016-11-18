@@ -7,7 +7,7 @@ namespace ContactList.Objects
     private static List<Contact> _instances = new List<Contact> {};
     private string _contactName;
     private int _id;
-    private List<Address> _addressMulti;
+    private List<Address> _addresses;
     private static List<Contact> _matches = new List<Contact> {};
 
     public Contact(string contactName)
@@ -15,7 +15,7 @@ namespace ContactList.Objects
       _contactName = contactName;
       _instances.Add(this);
       _id = _instances.Count;
-      _addressMulti = new List<Address>{};
+      _addresses = new List<Address>{};
     }
     public string GetContactName()
     {
@@ -25,9 +25,9 @@ namespace ContactList.Objects
     {
       return _id;
     }
-    public List<Address> GetAddressMulti()
+    public List<Address> GetAddresses()
     {
-      return _addressMulti;
+      return _addresses;
     }
     public static Contact Find(int searchId)
     {

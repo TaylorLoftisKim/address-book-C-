@@ -1,12 +1,12 @@
 <h3>Here is the address for @contact.GetContactName()</h3>
 <ol>
-  @foreach (var address in @model["AddressMulti"])
+  @foreach (var address in @model["Addresses"])
   {
     <li>@address.GetName()</li>
   }
 </ol>
 <p>
-  <a href='/contact/@Model["artist"].GetId()/addressMulti/new'>Add a new Address</a>
+  <a href='/contact/@Model["contact"].GetId()/addresses/new'>Add a new Address</a>
 </p>
 <p>
   <a href="/">Return Home</a>

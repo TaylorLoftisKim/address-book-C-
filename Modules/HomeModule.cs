@@ -15,9 +15,9 @@ namespace ContactList
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedContact = Contact.Find(parameters.id);
-        var contactAddressMulti = selectedContact.GetAddressMulti();
+        var contactAddresses = selectedContact.GetAddresses();
         model.Add("contact", selectedContact);
-        model.Add("AddressMulti", contactAddressMulti);
+        model.Add("Addresses", contactAddresses);
         return View["view-contact.cshtml", model];
       };
       Get["/view-all-contact"] = _ =>
@@ -37,23 +37,23 @@ namespace ContactList
         var allAddressMulti = Address.GetAllAddress();
         return View["view-all-address", allAddressMulti];
       };
-      Get["/contact/{id}/addressMulti/new"] = parameters =>
+      Get["/contact/{id}/addresses/new"] = parameters =>
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedContact = Contact.Find(parameters.id);
-        var contactAddressMulti = selectedContact.GetAddressMulti();
+        var contactAddresses = selectedContact.GetAddresses();
         model.Add("contact", selectedContact);
-        model.Add("AddressMulti", contactAddressMulti);
+        model.Add("Addresses", contactAddresses);
         return View["address-new-form.cshtml", model];
       };
-      Post["/addressMulti"] = _ =>
+      Post["/addresses"] = _ =>
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedContact = Contact.Find(Request.Form["artist-id"]);
-        List<Address> contactAddressMulti = selectedContact.GetAddressMulti();
+        List<Address> contactAddresses = selectedContact.GetAddresses();
         Address newAddress = new Address(Request.Form["address-name"]);
-        contactAddressMulti.Add(newAddress);
-        model.Add("AddressMulti", contactAddressMulti);
+        contactAddresses.Add(newAddress);
+        model.Add("Addresses", contactAddresses);
         model.Add("contact", selectedContact);
         return View["view"];
       };
