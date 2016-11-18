@@ -42,7 +42,11 @@ namespace ContactList
         Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedContact = Contact.Find(Request.Form["artist-id"]);
         List<Address> contactAddressMulti = selectedContact.GetAddressMulti();
-        Address newAddress = new Address(Request.Form["address-name"])
+        Address newAddress = new Address(Request.Form["address-name"]);
+        contactAddressMulti.Add(newAddress);
+        model.Add("AddressMulti", contactAddressMulti);
+        model.Add("contact", selectedContact);
+        return View["view"]
       }
     }
   }
