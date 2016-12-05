@@ -2,18 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Contact</title>
-    <link href="/Content/css/bootstrap.css" rel="stylesheet" />
-    <link href="/Content/css/styles.css" rel="stylesheet" />
+    <title>New Contacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/Content/css/styles.css">
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h3>Your New Contact</h3>
+        <h3>New Contact: </h3>
         <h5>@Model.GetName()</h5>
         <h5>@Model.GetPhoneNUmber()</h5>
         <h5>@Model.GetUserAddress()</h5>
-        <p><a href="/contact-add">Add another contact</a></p>
+        <p><a href="/contact-add">Add Another Contact</a></p>
         <p><a href="/">Return to Home Page</a></p>
       </div>
     </div>
