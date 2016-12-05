@@ -1,16 +1,21 @@
+using System;
 using System.Collections.Generic;
 
-namespace ContactList.Objects
+namespace Contacts.Objects
 {
-  public class Address
+  public class Contact
   {
     private string _name;
+    private string _phoneNumber;
+    private string _userAddress;
     private int _id;
-    private static List<Address> _instances = new List<Address> {};
+    private static List<Contact> _instances = new List<Contact>{};
 
-    public Address (string name)
+    public Contact(string name, string phoneNumber, string userAddress)
     {
       _name = name;
+      _phoneNumber = phoneNumber;
+      _userAddress = userAddress;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -19,13 +24,35 @@ namespace ContactList.Objects
     {
       return _name;
     }
-    public static List<Address> GetAllAddress()
+
+    public string GetPhoneNumber()
+    {
+      return _phoneNumber;
+    }
+
+    public string GetUserAddress()
+    {
+      return _userAddress;
+    }
+
+    public int GetId()
+    {
+      return _id;
+    }
+
+    public static List<Contact> GetAll()
     {
       return _instances;
     }
-    public static Address Find(int searchId)
+
+    public static void ClearAll()
     {
-      return _instances[searchId-1];
+      _instances.Clear();
+    }
+
+    public static Contact Find(int searchId)
+    {
+      return _instances[searchId - 1];
     }
   }
 }

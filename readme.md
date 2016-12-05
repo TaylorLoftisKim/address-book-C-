@@ -12,6 +12,10 @@ _This application will store any information provided by the user when filling o
 
 * _Clone file from GitHub.com_
 * _Open file in any web browser_
+* _If opening using Atom, please open Windows Powershell as well_
+* _Perform a 'dnu restore' just in case the project.json file needs to be refreshed_
+* _Perform a dnx kestrel to test the application on your local connection_
+* _Once finished using the application, perform the command 'CTL + C' to shut down the server_
 
 ## Known Bugs
 

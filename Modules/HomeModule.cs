@@ -1,68 +1,31 @@
 using Nancy;
 using System.Collections.Generic;
-using ContactList.Objects;
+using Contacts.Objects;
 
-namespace ContactList
+namespace Contacts
 {
   public class HomeModule : NancyModule
   {
     public HomeModule()
     {
-      Get["/"] = _ => View["index.cshtml"];
-      Get["/contact/new"] = _ => View["contact-new-form.cshtml"];
-      Get["/address/new"] = _ => View["address-new-form.cshtml"];
-      Get["/contacts/{id}"] = parameters =>
-      {
-        Dictionary<string, object> model = new Dictionary<string, object>();
-        var selectedContact = Contact.Find(parameters.id);
-        var contactAddresses = selectedContact.GetAddresses();
-        model.Add("contact", selectedContact);
-        model.Add("Addresses", contactAddresses);
-        return View["view-contact.cshtml", model];
+      Get["/"] = _ =>{
+        List<Contact> allContacts = Contact.GetAll();
+        return View["index.cshtml", allContacts];
       };
-      Get["/view-all-contact"] = _ =>
-      {
-        var allContacts = Contact.GetAll();
-        return View["view-all-contact.cshtml", allContacts];
+      Get["/add-contact"] = _ =>{
+        return View["add_contact.cshtml"];
       };
-      Post["/view-all-contact"] = _ =>
-      {
-        Contact newContact = new Contact(Request.Form["contact-name"]);
-        var allContacts = Contact.GetAll();
-        return View["view-all-contact.cshtml", allContacts];
+      Get["/{id}"] = parameters =>{
+        Contact contact = Contact.Find(parameters.id);
+        return View["/contact.cshtml", contact];
       };
-      Post["/view-all-address"] = _ =>
-      {
-        Address newAddress = new Address(Request.Form["name"]);
-        var allAddressMulti = Address.GetAllAddress();
-        return View["view-all-address", allAddressMulti];
+      Post["/contact/contact-new-form"] = _ =>{
+        Contact newContact = new Contact(Request.Form["new-name"], Request.Form["new-number"], Request.Form["new-address"]);
+        return View["new_contact.cshtml", newContact];
       };
-      Get["/contact/{id}/addresses/new"] = parameters =>
-      {
-        Dictionary<string, object> model = new Dictionary<string, object>();
-        var selectedContact = Contact.Find(parameters.id);
-        var contactAddresses = selectedContact.GetAddresses();
-        model.Add("contact", selectedContact);
-        model.Add("Addresses", contactAddresses);
-        return View["address-new-form.cshtml", model];
-      };
-      Post["/addresses"] = _ =>
-      {
-        Dictionary<string, object> model = new Dictionary<string, object>();
-        var selectedContact = Contact.Find(Request.Form["artist-id"]);
-        List<Address> contactAddresses = selectedContact.GetAddresses();
-        Address newAddress = new Address(Request.Form["address-name"]);
-        contactAddresses.Add(newAddress);
-        model.Add("Addresses", contactAddresses);
-        model.Add("contact", selectedContact);
-        return View["view"];
-      };
-      Post["/searchContact"] = _ =>
-      {
-        var searchInput = Request.Form["searchName"];
-        List<Contact> matchedContacts = Contact.FilteredContacts(searchInput);
-        return View["view-all-contact", matchedContacts];
+      Post["/contacts/contact-cleared"] = _ =>{
+        Contact.ClearAll();
+        return View["contact-cleared.cshtml"];
       };
     }
   }
-}
