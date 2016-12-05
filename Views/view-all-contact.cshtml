@@ -1,17 +1,18 @@
-<h1>Here are your Contacts</h1>
-<form action="/searchContact" method="post">
-  <label for="searchName">Enter a Contact</label>
-  <input type="text" name="searchName" id="searchName">
-  <button type="submit">Enter</button>
-  <p>
-    * Click on the name to give it an Address and a Phone Number.
-  </p>
-</form>
-<ul>
-  @foreach (var contact in Model)
-  {
-    <li><a href="/view-contact">@contact.GetContactName()</a></li>
-  }
-</ul>
-<a href="/contact/new">Add an Contact</a>
-<a href="/">Return Home</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/Content/css/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h4>Info for @Model.GetName()</h4>
+        <p>Phone Number: @Model.GetPhoneNUmber()</p>
+        <p>Address: @Model.GetUserAddress()</p>
+      </div>
+    </div>
+  </body>
+</html>

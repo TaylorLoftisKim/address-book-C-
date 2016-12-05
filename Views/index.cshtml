@@ -10,7 +10,7 @@
     <div class="container">
       <div class="jumbotron">
         <h2>Address Book</h2>
-        <a href="/add-contact"><h4>Add a new Contact</h4></a>
+        <a href="/contact-add"><h4>Add a new Contact</h4></a>
         <p>Here are all of your current contacts</p>
         <ul>
           @foreach(var contact in Model)
@@ -18,7 +18,7 @@
             <li><a href="/@contact.GetId()">@contact.GetName()</a></li>
           }
         </ul>
-        <form action="/contacts/clear" method="post">
+        <form action="/contacts/contact-cleared" method="post">
           <button type="submit" name="button" class="btn-info">Clear All Contacts</button>
         </form>
       </div>

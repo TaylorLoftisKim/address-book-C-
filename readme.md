@@ -18,8 +18,7 @@ _This application will store any information provided by the user when filling o
 * _Once finished using the application, perform the command 'CTL + C' to shut down the server_
 
 ## Known Bugs
-
-_Currently will not load phone number page. _
+*_No known bugs recorded_
 
 ## Specifications
 _1. Application will allow users to input a Name to be stored under "Contact Name"._

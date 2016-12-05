@@ -12,16 +12,16 @@ namespace Contacts
         List<Contact> allContacts = Contact.GetAll();
         return View["index.cshtml", allContacts];
       };
-      Get["/add-contact"] = _ =>{
-        return View["add_contact.cshtml"];
+      Get["/contact-add"] = _ =>{
+        return View["contact-add.cshtml"];
       };
       Get["/{id}"] = parameters =>{
         Contact contact = Contact.Find(parameters.id);
-        return View["/contact.cshtml", contact];
+        return View["/view-all-contact.cshtml", contact];
       };
-      Post["/contact/contact-new-form"] = _ =>{
+      Post["/contact/contact-new"] = _ =>{
         Contact newContact = new Contact(Request.Form["new-name"], Request.Form["new-number"], Request.Form["new-address"]);
-        return View["new_contact.cshtml", newContact];
+        return View["contact-new.cshtml", newContact];
       };
       Post["/contacts/contact-cleared"] = _ =>{
         Contact.ClearAll();

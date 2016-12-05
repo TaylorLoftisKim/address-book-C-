@@ -9,18 +9,18 @@
   <body>
     <div class="container">
       <h3>Add a new Contact:</h3>
-      <form action='/contact/new' method='post'>
+      <form action='/contact/contact-new' method='post'>
         <div class="form-group">
           <label for='new-name'>Contact Name</label>
-          <input  class='form-control' name='new-name' type='text' placeholder="Enter a Name">
+          <input  class='form-control' name='new-name' type='text' placeholder="Your Name">
         </div>
         <div class="form-group">
           <label for='new-number'>Contact Phone Number</label>
-          <input class='form-control' name='new-number' type='text' placeholder="Enter a Phone Number">
+          <input class='form-control' name='new-number' type='text' placeholder="xxx-xxx-xxxx">
         </div>
         <div class="form-group">
           <label for='new-address'>Contact Address</label>
-          <input class='form-control' name='new-address' type='text' placeholder="Enter an Address">
+          <input class='form-control' name='new-address' type='text' placeholder="1234 NW Epicodus St">
         </div>
         <button type='submit' class="btn-success">Add Contact</button>
       </form>
