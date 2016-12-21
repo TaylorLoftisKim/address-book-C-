@@ -9,9 +9,15 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h4>Info for @Model.GetName()</h4>
-        <p>Phone Number: @Model.GetPhoneNUmber()</p>
-        <p>Address: @Model.GetUserAddress()</p>
+        <h1>Contact Info for @Model.GetName():</h1>
+      </div>
+      <div class="jumbotron">
+        <p><strong>Name: </strong>@Model.GetName()</p>
+        <p><strong>Phone Number: </strong>@Model.GetPhoneNumber()</p>
+        <p><strong>Address: </strong>@Model.GetUserAddress()</p>
+      </div>
+      <div class="jumbotron">
+        <p><a href="/">Return to Home Page</a></p>
       </div>
     </div>
   </body>

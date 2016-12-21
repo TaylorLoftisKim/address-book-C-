@@ -9,18 +9,24 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h2>Address Book</h2>
+        <h1>Address Book</h1>
+      </div>
+      <div class="jumbotron">
         <a href="/contact-add"><h4>Add a new Contact</h4></a>
-        <p>Here are all of your current contacts</p>
+      </div>
+      <div class="jumbotron">
+        <p>Here are all of your current contacts:</p>
         <ul>
           @foreach(var contact in Model)
           {
             <li><a href="/@contact.GetId()">@contact.GetName()</a></li>
           }
+          <br>
+          <br>
+          <form action="/contacts/contact-cleared" method="post">
+            <button type="submit" name="button" class="btn-info">Clear All Contacts</button>
+          </form>
         </ul>
-        <form action="/contacts/contact-cleared" method="post">
-          <button type="submit" name="button" class="btn-info">Clear All Contacts</button>
-        </form>
       </div>
     </div>
   </body>
